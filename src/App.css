@@ -19,7 +19,7 @@
   margin-bottom: 10px;
 }
 
-.message-container{
+/* .message-container{
   border: 1px solid black;
   flex-grow: 1;
   overflow-y: auto;
@@ -30,6 +30,11 @@
   color: white;
   font-family: 'Times New Roman', Times, serif;
   font-size: 4rem;
+} */
+.message-container{
+  border: 1px solid black;
+  flex-grow: 1;
+  overflow-y: auto;
 }
 
 input[type=text] {

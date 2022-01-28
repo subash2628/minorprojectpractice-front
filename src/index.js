@@ -4,7 +4,9 @@ import './index.css';
 import App from './App';
 
 const { io } = require("socket.io-client");
-const socket = io('http://localhost:5000');
+const permanentLink = "https://minorpractice.herokuapp.com/"
+const temp = "http://localhost:5000"
+const socket = io(permanentLink);
 
 ReactDOM.render(
   <React.StrictMode>

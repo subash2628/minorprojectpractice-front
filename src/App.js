@@ -1,12 +1,13 @@
 import './App.css';
 import {useState} from 'react'
+import Meter from './Components/meter'
 
 
 
 function App({socket}) {
 
   const [socketId,setId]= useState('')
-  const [message,setMessage]= useState('')
+  const [message,setMessage]= useState(0)
   const [inputId,setInputId]= useState('')
   const [errorFlag,setErrorFlag]= useState(false)
   const [dpermission,setdPermission]= useState(false)
@@ -33,7 +34,7 @@ function App({socket}) {
   const sendMessagee = ()=>{
     setId(socketId+" [Host]")
     setInterval(()=>{
-      let message = Math.floor(Math.random()*10)
+      let message = Math.random()
       //console.log(message)
       setMessage(message)
       socket.emit("send-message",message,inputId)
@@ -92,7 +93,7 @@ function App({socket}) {
         : <h3 style={{color:'green'}}>Connected to : {inputId}</h3>}
       </header>
       <div className='message-container'>
-          {message}
+          <Meter data={message}/>
       </div>
     </div>
   );
